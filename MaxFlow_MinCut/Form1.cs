@@ -29,6 +29,11 @@ namespace MaxFlow_MinCut
             gViewer1.Graph = graph;
         }
 
+        /// <summary>
+        /// kenar ekleme butonuna basıldığında çalışan fonk
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, System.EventArgs e)
         {
             string node1 = tbWillAddNode1.Text;
