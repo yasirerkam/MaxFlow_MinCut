@@ -17,14 +17,20 @@ namespace MaxFlow_MinCut
         /// <param name="target"></param>
         public static Edge AddEdgeIfNotExist(this Graph graph, string source, string target, double lineWidth)
         {
-            if (!graph.CheckEdge(source, target))
+            //if (!graph.CheckEdge(source, target))
             {
                 Edge edge = graph.AddEdge(source, target);
-                edge.Attr.ArrowheadAtTarget = ArrowStyle.None;
+                //edge.Attr.ArrowheadAtTarget = ArrowStyle.None;
                 edge.Attr.LineWidth = lineWidth;
+                edge.Attr.Color = Color.GreenYellow;
+                Manager.edgeLineWidth.Add(edge, lineWidth);
+
+                Manager.AddNodeLabelID(source);
+                Manager.AddNodeLabelID(target);
 
                 return edge;
             }
+
             return null;
         }
 
